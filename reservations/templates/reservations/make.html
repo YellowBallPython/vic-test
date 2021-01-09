@@ -1,0 +1,12 @@
+{% extends 'frontend/base.html' %}
+
+{% block title %}
+{% endblock title %}
+
+{% block content %}
+<form action="{% url 'reservations:make' %}" method="POST">
+    {% csrf_token %}
+    {{form.as_p}}
+    <input type="submit" value="Crear">
+</form>
+{% endblock content %}
