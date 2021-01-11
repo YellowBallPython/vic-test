@@ -1,7 +1,13 @@
 import datetime as dt
+from collections import namedtuple
+
+from django.conf import settings
+from django.template.loader import get_template
+from django.core.mail import EmailMultiAlternatives
+from django.contrib.auth.models import User
 
 from .models import Reservation
-from django.contrib.auth.models import User
+
 
 """
 File de funciones para el views de Reservations
@@ -41,3 +47,45 @@ def check_availability(sorted_list, reservation):
         if sorted_list[i-1].check_out <= reservation.check_in and reservation.check_out <= sorted_list[i].check_in:
             return 0
     return 1
+
+
+def send_success_email(user, reservation):
+    template = get_template('reservations/success_email.html')
+    context = {
+        'reservation': reservation,
+        'user': user,
+    }
+    content = template.render(context=context)
+
+    email = EmailMultiAlternatives(
+        "Muchas gracias :)",
+        '♥',
+        settings.EMAIL_HOST_USER,
+        [user.email],
+    )
+
+    email.attach_alternative(content, 'text/html')
+
+def get_res_month(reservation):
+
+    """
+    Regresa el nombre del mes de la reserva.
+    """
+    MONTHS = {
+            1: 'Enero',
+            2: 'Febrero',
+            3: 'Marzo',
+            4: 'Abril',
+            5: 'Mayo',
+            6: 'Junio',
+            7: 'Julio',
+            8: 'Agosto',
+            9: 'Setiembre',
+            10: 'Octubre',
+            11: 'Noviembre',
+            12: 'Diciembre',
+        }
+    for k in MONTHS.keys():
+        if reservation.date.month == k:
+            return k
+

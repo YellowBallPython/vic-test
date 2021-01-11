@@ -97,3 +97,6 @@ def my_res(request):
 def expired_res(request):
     pass
 # TODO: Hacer expired_res view
+
+def test_form(request):
+    pass
