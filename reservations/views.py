@@ -82,8 +82,12 @@ def make_res(request):
     return render(request, 'reservations/make.html', context)
 
 
-def lista(request):
-    return render(request, 'reservations/list.html')
+def reservations_list(request):
+    reservations = Reservation.objects.all()
+    context = {
+        'reservations':reservations,
+        }
+    return render(request, 'reservations/list.html', context)
 
 
 def res_by_date(request):
