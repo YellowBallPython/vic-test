@@ -35,6 +35,10 @@ def sort_res(unsorted_list):
 
 
 def check_availability(sorted_list, reservation):
+    """
+    Genera los constrains 'opening y closing' y compara la reserva entrante
+    con las reservas del día.
+    """
     opening = dt.time(hour=9, minute=0)
     closing = dt.time(hour=21, minute=0)
     midnight_open = dt.time(hour=0, minute=0, second=1)
@@ -85,7 +89,7 @@ def get_res_month(reservation):
             11: 'Noviembre',
             12: 'Diciembre',
         }
-    for k in MONTHS.keys():
-        if reservation.date.month == k:
-            return k
+    month = MONTHS.get(reservation.date.month)
+    return month
+
 
