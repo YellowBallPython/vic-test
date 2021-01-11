@@ -7,7 +7,12 @@ from django.contrib.auth.models import User
 
 from .forms import MakeReservationForm
 from .models import Reservation
-from .functions import sort_res, check_availability
+from .functions import (
+    sort_res,
+    check_availability,
+    send_success_email,
+    get_res_month,
+) 
 
 
 def make_res(request):
@@ -60,6 +65,7 @@ def make_res(request):
                     sorted_reservations, actual_reservation)
                 if outcome == 0:
                     actual_reservation.save()
+                    send_success_email(user, actual_reservation)
                     return redirect('reservations:success')
                 else:
                     messages.error(
@@ -97,3 +103,6 @@ def my_res(request):
 def expired_res(request):
     pass
 # TODO: Hacer expired_res view
+
+def test_form(request):
+    pass

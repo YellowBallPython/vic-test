@@ -1,15 +1,20 @@
 import datetime as dt
+from collections import namedtuple
+
+from django.conf import settings
+from django.template.loader import render_to_string
+from django.core.mail import EmailMultiAlternatives, send_mail
+from django.contrib.auth.models import User
 
 from .models import Reservation
-from django.contrib.auth.models import User
+
 
 """
 File de funciones para el views de Reservations
 """
 
-# Ordena una lista las reservas de menor a mayor
+# dummy user para opening y closing
 dummy_user = User.objects.get(id=1)
-
 
 def sort_res(unsorted_list):
     for i in range(1, len(unsorted_list)):
@@ -23,10 +28,11 @@ def sort_res(unsorted_list):
             j -= 1
     return unsorted_list
 
-# Chequea si la reservación cabe en el sistema
-
-
 def check_availability(sorted_list, reservation):
+    """
+    Genera los constrains 'opening y closing' y compara la reserva entrante
+    con las reservas del día.
+    """
     opening = dt.time(hour=9, minute=0)
     closing = dt.time(hour=21, minute=0)
     midnight_open = dt.time(hour=0, minute=0, second=1)
@@ -36,7 +42,42 @@ def check_availability(sorted_list, reservation):
     sorted_list.append(Reservation(
         owner=dummy_user, check_in=closing, check_out=midnight_close))
     for i in range(1, len(sorted_list)):
-        print(f"Espacio {i} en {type(sorted_list)}")
         if sorted_list[i-1].check_out <= reservation.check_in and reservation.check_out <= sorted_list[i].check_in:
             return 0
     return 1
+
+def send_success_email(user, reservation):
+    # multiple assignment
+    subject, from_email, to = 'Thank you ♥', settings.EMAIL_HOST_USER , user.email
+    html_content = render_to_string('reservations/success_email.html', {'user':user, 'reservation':reservation})
+    send_mail(
+    subject,
+    '♥',
+    from_email,
+    [to],
+    html_message=html_content,
+)
+
+def get_res_month(reservation):
+
+    """
+    Regresa el nombre del mes de la reserva.
+    """
+    MONTHS = {
+            1: 'Enero',
+            2: 'Febrero',
+            3: 'Marzo',
+            4: 'Abril',
+            5: 'Mayo',
+            6: 'Junio',
+            7: 'Julio',
+            8: 'Agosto',
+            9: 'Setiembre',
+            10: 'Octubre',
+            11: 'Noviembre',
+            12: 'Diciembre',
+        }
+    month = MONTHS.get(reservation.date.month)
+    return month
+
+
