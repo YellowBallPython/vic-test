@@ -2,8 +2,8 @@ import datetime as dt
 from collections import namedtuple
 
 from django.conf import settings
-from django.template.loader import get_template
-from django.core.mail import EmailMultiAlternatives
+from django.template.loader import render_to_string
+from django.core.mail import EmailMultiAlternatives, send_mail
 from django.contrib.auth.models import User
 
 from .models import Reservation
@@ -16,9 +16,6 @@ File de funciones para el views de Reservations
 # dummy user para opening y closing
 dummy_user = User.objects.get(id=1)
 
-# Ordena las reservas de menor a mayor
-
-
 def sort_res(unsorted_list):
     for i in range(1, len(unsorted_list)):
         j = i
@@ -30,9 +27,6 @@ def sort_res(unsorted_list):
             unsorted_list[j-1] = temp
             j -= 1
     return unsorted_list
-
-# Chequea si la reservación cabe en el sistema
-
 
 def check_availability(sorted_list, reservation):
     """
@@ -52,23 +46,17 @@ def check_availability(sorted_list, reservation):
             return 0
     return 1
 
-
 def send_success_email(user, reservation):
-    template = get_template('reservations/success_email.html')
-    context = {
-        'reservation': reservation,
-        'user': user,
-    }
-    content = template.render(context=context)
-
-    email = EmailMultiAlternatives(
-        "Muchas gracias :)",
-        '♥',
-        settings.EMAIL_HOST_USER,
-        [user.email],
-    )
-
-    email.attach_alternative(content, 'text/html')
+    # multiple assignment
+    subject, from_email, to = 'Thank you ♥', settings.EMAIL_HOST_USER , user.email
+    html_content = render_to_string('reservations/success_email.html', {'user':user, 'reservation':reservation})
+    send_mail(
+    subject,
+    '♥',
+    from_email,
+    [to],
+    html_message=html_content,
+)
 
 def get_res_month(reservation):
 
