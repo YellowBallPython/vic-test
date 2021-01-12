@@ -10,4 +10,4 @@ class Profile(models.Model):
                             upload_to='profile_pics')
 
     def __str__(self):
-        return f'Perfil de {self.user}'
+        return f'{self.user} Profile'
