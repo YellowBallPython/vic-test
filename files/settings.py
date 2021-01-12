@@ -36,6 +36,7 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     # MY APPS
     'frontend',
+    'bands',
     'profiles',
     'reservations',
     # DJANGO APPS
@@ -126,6 +127,11 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
+
+# MEDIA SETTINGS
+# For profile and bands pictures
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = '/media/'
 
 # EMAIL SETTINGS
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
