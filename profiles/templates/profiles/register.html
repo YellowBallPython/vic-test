@@ -1,0 +1,20 @@
+{% extends 'frontend/base.html' %}
+
+{% block title %}
+<title>Sign up</title>
+{% endblock title %}
+
+{% block content %}
+<div class="form-content">
+    <form method='POST'>
+        {% csrf_token %}
+        <fieldset>
+            {{form.as_p}}
+        </fieldset>
+        <input formmethod='POST' type="submit" value="Crear cuenta">
+    </form>
+    <div class="footer-form">
+        <small>Ya tienes cuenta? <a href="#">Login</a></small>
+    </div>
+</div>
+{% endblock content %}

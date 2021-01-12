@@ -143,3 +143,6 @@ EMAIL_PORT = 587
 EMAIL_HOST_USER = 'djangoautomationtest@gmail.com'
 EMAIL_HOST_PASSWORD = os.getenv('EMAIL_HOST_PASSWORD')
 EMAIL_USE_TLS = True
+
+# LOGIN REDIRECT
+LOGIN_REDIRECT_URL = 'frontend:index'

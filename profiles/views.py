@@ -1,9 +1,26 @@
 from django.contrib.auth.models import User
 from django.shortcuts import render, redirect
+from django.contrib.auth.decorators import login_required
+from django.contrib import messages
+from django.contrib.auth.forms import UserCreationForm
 
 from bands.models import Band
 from .forms import CreateBandForm
 
+def register(request):
+    form = UserCreationForm()
+    if request.method == 'POST':
+        form = UserCreationForm(request.POST)
+        if form.is_valid():
+            form.save()
+            username = form.cleaned_date.get('username')
+            messages.success(request, f'Cuenta creada para {username}! :)')
+            return redirect('frontend:index')
+
+    context = {
+        'form':form
+    }
+    return render(request, 'profiles/register.html', context)
 
 def profile(request):
     user = User.objects.get(id=request.user.id)
@@ -22,8 +39,9 @@ def band_creation(request):
     if request.method == 'POST':
         form = CreateBandForm(request.POST, instance=user, files=request.FILES)
         if form.is_valid():
-            form.save()
-            print(form.errors)
+            cd = form.cleaned_data
+            newband = Band(name=cd['name'], genre=cd['genre'], owner=user)
+            newband.save()
             return redirect('profiles:profile')
 
     context = {

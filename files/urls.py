@@ -17,10 +17,12 @@ from django.contrib import admin
 from django.conf import settings
 from django.conf.urls.static import static
 from django.urls import path, include
+from profiles import views as profile_views
 
 urlpatterns = [
     path('', include('frontend.urls')),
     path('profile/', include('profiles.urls')),
+    path('register/', profile_views.register, name='register'),
     path('reservations/', include('reservations.urls')),
     path('admin/', admin.site.urls),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
