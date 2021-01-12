@@ -34,6 +34,8 @@ def profile(request):
 
 
 def band_creation(request):
+
+
     form = CreateBandForm()
     user = User.objects.get(pk=request.user.id)
     if request.method == 'POST':
@@ -48,3 +50,13 @@ def band_creation(request):
         'form': form,
     }
     return render(request, 'profiles/create_band.html', context)
+
+def edit_band(request, id):
+    band = Band.objects.get(pk=id)
+    form = CreateBandForm(instance=band)
+    if request.method == 'POST':
+        if form.is_valid:
+            form.save()
+            return redirect('profiles:profile')
+    
+    return render(request, 'profiles/edit_band.html', {'form':form})

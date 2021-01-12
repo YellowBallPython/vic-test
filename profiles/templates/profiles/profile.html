@@ -16,10 +16,13 @@
         {% for band in bands %}
         <img class="band-picture" src="{{band.img.url}}" alt="band-picture">
         <p>{{band.name}}</p>
+        <small><a href="{% url 'profiles:edit-band' band.id %}">Editar</a></small>
+        <br>
         {% endfor %}
         {% else %}
         <p>No tienes bandas.</p>
         {% endif %}
+        <br>
         <small><a href="{% url 'profiles:band-creation' %}">Agregar banda ☺</a></small>
     </div>
 </div>
