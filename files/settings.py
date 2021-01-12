@@ -35,10 +35,10 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     # MY APPS
-    'frontend',
-    'bands',
-    'profiles',
-    'reservations',
+    'frontend.apps.FrontendConfig',
+    'bands.apps.BandsConfig',
+    'profiles.apps.ProfilesConfig',
+    'reservations.apps.ReservationsConfig',
     # DJANGO APPS
     'django.contrib.admin',
     'django.contrib.auth',
@@ -127,6 +127,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static'),
+]
 
 # MEDIA SETTINGS
 # For profile and bands pictures

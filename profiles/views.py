@@ -4,6 +4,7 @@ from django.shortcuts import render, redirect
 from bands.models import Band
 from .forms import CreateBandForm
 
+
 def profile(request):
     user = User.objects.get(id=request.user.id)
     bands = Band.objects.filter(owner=user)
@@ -14,6 +15,7 @@ def profile(request):
     }
     return render(request, 'profiles/profile.html', context)
 
+
 def band_creation(request):
     form = CreateBandForm()
     user = User.objects.get(pk=request.user.id)
@@ -21,6 +23,7 @@ def band_creation(request):
         form = CreateBandForm(request.POST, instance=user, files=request.FILES)
         if form.is_valid():
             form.save()
+            print(form.errors)
             return redirect('profiles:profile')
 
     context = {
