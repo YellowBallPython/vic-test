@@ -1,0 +1,28 @@
+{% extends 'frontend/base.html' %}
+
+{% block title %}
+<title>Profile</title>
+{% endblock title %}
+
+{% block content %}
+<div class="main-card">
+    <div class="persona-info">
+        <img class="profile-picture" src="{{user.profile.pic.url}}" alt="profile-picture">
+        <h4>User: {{user.username}}</h4>
+    </div>
+    <div class="profile-band-section">
+
+        {% if bands %}
+        {% for band in bands %}
+        <img class="band-picture" src="{{band.img.url}}" alt="band-picture">
+        <p>{{band.name}}</p>
+        {% endfor %}
+        {% else %}
+        <p>No tienes bandas.</p>
+        {% endif %}
+        <small><a href="{% url 'profiles:band-creation' %}">Agregar banda ☺</a></small>
+    </div>
+</div>
+
+
+{% endblock content %}
