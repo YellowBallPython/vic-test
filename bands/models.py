@@ -8,4 +8,4 @@ class Band(models.Model):
     owner = models.ForeignKey(User, on_delete=models.CASCADE)
 
     def __str__(self):
-        return self.name
+        return f'{self.name} de {self.owner}_id: {self.owner.id}'
