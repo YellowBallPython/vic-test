@@ -3,7 +3,7 @@ from django.contrib.auth.models import User
 
 class Band(models.Model):
     name = models.CharField(max_length=200, verbose_name='nombre')
-    img = models.ImageField(verbose_name='foto', upload_to='bands_pics', default='default-band.png')
+    img = models.ImageField(verbose_name='foto', upload_to='bands_pics', default='default-band.jpg')
     genre = models.CharField(max_length=200, verbose_name='género')
     owner = models.ForeignKey(User, on_delete=models.CASCADE)
 
