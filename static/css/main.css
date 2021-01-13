@@ -1,0 +1,267 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap');
+
+* {
+    font-family: 'Poppins', sans-serif;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/*
+------------> NAV <------------
+*/
+
+.nav-container {
+    display: flex;
+    width: 100%;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    height:50px;
+    background: rgb(24, 15, 48);
+}
+
+nav {
+    width:80%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center
+}
+
+ul {
+    display: flex;
+    justify-content: space-between;
+    flex: 1;
+    list-style: none;
+}
+
+#logo {
+    font-family: 'Poppins';
+    font-weight:600;
+    color:  rgb(255, 251, 249);
+    flex: 5;
+}
+
+li {
+    font-size: 16px;
+    margin-left: 30px;
+}
+a {
+    color: rgb(255, 251, 249);
+    text-decoration: none;
+    letter-spacing: 3;
+    font-size: 12px;
+}
+
+/*
+------------> BODY-BODY <------------
+*/
+
+.body-body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: rgb(56, 53, 73);
+}
+
+.container {
+    position: relative;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 1200px;
+    flex-wrap: wrap;
+}
+
+/*
+------------> PRIMERA CARTA MEMBERS <------------
+*/
+
+.container .card {
+    display:flex;
+    overflow: hidden;
+    position: relative;
+    width: 280px;
+    height: 400px;
+    margin: 30px;
+    justify-content: center;
+    align-items: center;
+    background: url(/static/images/members.jpg);
+    background-size: 275%;
+    background-position: center;
+    border-radius: 10px;
+    box-shadow: 3px 5px 40px rgba(0, 0, 0, 0.4);
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
+    border-left: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.container .card .content {
+    padding: 20px;
+    text-align: center;
+    transform: translateY(450px);
+    opacity: 1;
+    transition: 0.5s;
+}
+
+.container .card:hover .content {
+    transform: translateY(10px);
+    background: #fff;
+    opacity: 1;
+}
+
+.container .card .content .content-top {
+    color:rgba(225, 255, 255, 0.9)
+}
+
+.container .card .content .content-bot h3 {
+    color:rgb(56, 53, 73);
+    position: absolute;
+    top: 345px;
+    left: 75px;
+}
+
+.container .card .content .content-bot a {
+    font-weight: 600;
+    position: relative;
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background: #4fc294;
+    color: black;
+    box-shadow: 1px 3px 8px rgba(0, 0, 0, 0.5);
+    text-decoration: none;
+}
+
+/*
+------------> DIVIDER Y HR <------------
+*/
+
+.divider {
+    height: 20px;
+    margin-bottom: 300px;
+}
+
+hr {
+    margin: 20px 0;
+}
+
+/*
+------------> SEGUNDA CARTA BANDAS <------------
+*/
+
+.container .card-bands {
+    display:flex;
+    overflow: hidden;
+    position: relative;
+    width: 280px;
+    height: 400px;
+    margin: 30px;
+    justify-content: center;
+    align-items: center;
+    background: url(/static/images/bands.png);
+    background-size: 275%;
+    background-position: center;
+    border-radius: 10px;
+    box-shadow: 3px 5px 40px rgba(0, 0, 0, 0.4);
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
+    border-left: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.container .card-bands .content {
+    padding: 20px;
+    text-align: center;
+    transform: translateY(450px);
+    opacity: 1;
+    transition: 0.5s;
+}
+
+.container .card-bands:hover .content {
+    transform: translateY(10px);
+    background: #fff;
+    opacity: 1;
+}
+
+.container .card-bands .content .content-top {
+    color:rgba(225, 255, 255, 0.9)
+}
+
+.container .card-bands .content .content-bot h3 {
+    color:rgb(56, 53, 73);
+    position: absolute;
+    top: 345px;
+    left: 65px;
+}
+
+.container .card-bands .content .content-bot a {
+    font-weight: 600;
+    position: relative;
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background: #4fc294;
+    color: black;
+    box-shadow: 1px 3px 8px rgba(0, 0, 0, 0.5);
+    text-decoration: none;
+}
+
+/*
+------------> TERCERA CARTA RESERVATIONS <------------
+*/
+
+.container .card-reservations {
+    display:flex;
+    overflow: hidden;
+    position: relative;
+    width: 280px;
+    height: 400px;
+    margin: 30px;
+    justify-content: center;
+    align-items: center;
+    background: url(/static/images/reservaciones.jpg);
+    background-size: 275%;
+    background-position: center;
+    border-radius: 10px;
+    box-shadow: 3px 5px 40px rgba(0, 0, 0, 0.4);
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
+    border-left: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.container .card-reservations .content {
+    padding: 20px;
+    text-align: center;
+    transform: translateY(450px);
+    opacity: 1;
+    transition: 0.5s;
+}
+
+.container .card-reservations:hover .content {
+    transform: translateY(10px);
+    background: #fff;
+    opacity: 1;
+}
+
+.container .card-reservations .content .content-top {
+    color:rgba(225, 255, 255, 0.9)
+}
+
+.container .card-reservations .content .content-bot h3 {
+    color:rgb(56, 53, 73);
+    position: absolute;
+    top: 325px;
+    left: 75px;
+}
+
+.container .card-reservations .content .content-bot a {
+    font-weight: 600;
+    position: relative;
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background: #4fc294;
+    color: black;
+    box-shadow: 1px 3px 8px rgba(0, 0, 0, 0.5);
+    text-decoration: none;
+}

@@ -5,11 +5,21 @@
 {% endblock title %}
 
 {% block content %}
-<form method='POST'>
-    {% csrf_token %}
-    <fieldset>
-        {{form}}
-    </fieldset>
-    <input formmethod="POST" type="submit" value="Entrar">
-</form>
+{% if user.is_authenticated %}
+<div class="body-body">
+    <h1 style="color:white;">YA COMPLETASTE EL REGISTRO :)</h1>
+</div>
+{% else %}
+<div class="body-body">
+    <form method='POST'>
+        {% csrf_token %}
+        <fieldset>
+            {{form}}
+        </fieldset>
+        <input formmethod="POST" type="submit" value="Entrar">
+    </form>
+</div>
+{% endif %}
+
+
 {% endblock content %}
