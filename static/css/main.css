@@ -265,3 +265,58 @@ hr {
     box-shadow: 1px 3px 8px rgba(0, 0, 0, 0.5);
     text-decoration: none;
 }
+
+/*
+------------> RESERVAS CARD <------------
+*/
+.container-all-res {
+    position: relative;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 1200px;
+    flex-wrap: wrap;
+    margin-top: 50px;
+}
+
+.container-all-res .card-all-res {
+    display:flex;
+    overflow: hidden;
+    position: relative;
+    width: 280px;
+    height: 200px;
+    margin: 30px;
+    justify-content: center;
+    align-items: center;
+    background:#4fc294 ;
+    background-size: 275%;
+    background-position: center;
+    border-radius: 10px;
+    box-shadow: 3px 5px 40px rgba(0, 0, 0, 0.4);
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
+    border-left: 1px solid rgba(255, 255, 255, 0.3);
+    flex-wrap: wrap;
+}
+
+/*
+------------> MEDIA QUERIES <------------
+*/
+
+@media only screen and (max-width: 600px) {
+    .nav-container {
+        position:relative;
+    }
+
+    .container-all-res {
+        margin-top: 15px;
+    }
+  }
+
+  @media only screen and (max-width: 1024px) {
+    .nav-container {
+        position:relative;
+    }
+    .container-all-res {
+        margin-top: 15px;
+    }
+  }

@@ -6,11 +6,19 @@
 
 {% block content %}
 <div class="body-body">
-    {% for reservation in reservations %}
-    <h3>Reserva para el {{reservation.date|date:"d"}} de {{reservation.date|date:"M"}}</h3>
-    <p>de {{reservation.check_in}} a {{reservation.check_out}}</p>
-    <small>Reservado por {{reservation.owner}}</small>
-    {% endfor %}
+    <div class="container-all-res">
+        {% for reservation in reservations %}
+        <div class="card-all-res">
+            <div class="content-res">
+                <h3>Reserva para el {{reservation.date|date:"d"}} de {{reservation.date|date:"M"}}</h3>
+                <p>de {{reservation.check_in}} a {{reservation.check_out}}</p>
+                <small>Reservado por {{reservation.owner}}</small>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+
 </div>
 
 
