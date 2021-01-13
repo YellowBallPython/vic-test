@@ -4,9 +4,13 @@
 {% endblock title %}
 
 {% block content %}
-<form action="{% url 'reservations:make' %}" method="POST">
-    {% csrf_token %}
-    {{form.as_p}}
-    <input type="submit" value="Crear">
-</form>
+<div class="body-body">
+    <form action="{% url 'reservations:make' %}" method="POST">
+        {% csrf_token %}
+        {{form.as_p}}
+        <input type="submit" value="Crear">
+    </form>
+</div>
+
+
 {% endblock content %}

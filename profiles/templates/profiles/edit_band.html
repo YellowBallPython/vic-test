@@ -5,11 +5,14 @@
 {% endblock title %}
 
 {% block content %}
-<form method='POST'>
-    {% csrf_token %}
-    <fieldset>
-        {{form}}
-    </fieldset>
-    <input formmethod="POST" type="submit" value="Entrar">
-</form>
+<div class="body-body">
+    <form method='POST'>
+        {% csrf_token %}
+        <fieldset>
+            {{form}}
+        </fieldset>
+        <input formmethod="POST" type="submit" value="Entrar">
+    </form>
+</div>
+
 {% endblock content %}

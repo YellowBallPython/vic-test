@@ -5,16 +5,19 @@
 {% endblock title %}
 
 {% block content %}
-<div class="form-content">
-    <form method='POST'>
-        {% csrf_token %}
-        <fieldset>
-            {{form.as_p}}
-        </fieldset>
-        <input formmethod='POST' type="submit" value="Crear cuenta">
-    </form>
-    <div class="footer-form">
-        <small>Ya tienes cuenta? <a href="#">Login</a></small>
+<div class="body-body">
+    <div class="form-content">
+        <form method='POST'>
+            {% csrf_token %}
+            <fieldset>
+                {{form.as_p}}
+            </fieldset>
+            <input formmethod='POST' type="submit" value="Crear cuenta">
+        </form>
+        <div class="footer-form">
+            <small>Ya tienes cuenta? <a href="#">Login</a></small>
+        </div>
     </div>
 </div>
+
 {% endblock content %}

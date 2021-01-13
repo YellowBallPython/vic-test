@@ -5,9 +5,13 @@
 {% endblock title %}
 
 {% block content %}
-{% for reservation in reservations %}
-<h3>Reserva para el {{reservation.date|date:"d"}} de {{reservation.date|date:"M"}}</h3>
-<p>de {{reservation.check_in}} a {{reservation.check_out}}</p>
-<small>Reservado por {{reservation.owner}}</small>
-{% endfor %}
+<div class="body-body">
+    {% for reservation in reservations %}
+    <h3>Reserva para el {{reservation.date|date:"d"}} de {{reservation.date|date:"M"}}</h3>
+    <p>de {{reservation.check_in}} a {{reservation.check_out}}</p>
+    <small>Reservado por {{reservation.owner}}</small>
+    {% endfor %}
+</div>
+
+
 {% endblock content %}

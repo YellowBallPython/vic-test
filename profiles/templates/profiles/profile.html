@@ -5,27 +5,31 @@
 {% endblock title %}
 
 {% block content %}
-<div class="main-card">
-    <div class="persona-info">
-        <img class="profile-picture" src="{{user.profile.pic.url}}" alt="profile-picture">
-        <h4>User: {{user.username}}</h4>
-    </div>
-    <div class="profile-band-section">
+<div class="body-body">
 
-        {% if bands %}
-        {% for band in bands %}
-        <img class="band-picture" src="{{band.img.url}}" alt="band-picture">
-        <p>{{band.name}}</p>
-        <small><a href="{% url 'profiles:edit-band' band.id %}">Editar</a></small>
-        <br>
-        {% endfor %}
-        {% else %}
-        <p>No tienes bandas.</p>
-        {% endif %}
-        <br>
-        <small><a href="{% url 'profiles:band-creation' %}">Agregar banda ☺</a></small>
+    <div class="main-card">
+        <div class="persona-info">
+            <img class="profile-picture" src="{{user.profile.pic.url}}" alt="profile-picture">
+            <h4>User: {{user.username}}</h4>
+        </div>
+        <div class="profile-band-section">
+
+            {% if bands %}
+            {% for band in bands %}
+            <img class="band-picture" src="{{band.img.url}}" alt="band-picture">
+            <p>{{band.name}}</p>
+            <small><a href="{% url 'profiles:edit-band' band.id %}">Editar</a></small>
+            <br>
+            {% endfor %}
+            {% else %}
+            <p>No tienes bandas.</p>
+            {% endif %}
+            <br>
+            <small><a href="{% url 'profiles:band-creation' %}">Agregar banda ☺</a></small>
+        </div>
     </div>
 </div>
+
 
 
 {% endblock content %}
