@@ -39,6 +39,8 @@ INSTALLED_APPS = [
     'bands.apps.BandsConfig',
     'profiles.apps.ProfilesConfig',
     'reservations.apps.ReservationsConfig',
+    # 3RD PARTY APPS
+    'crispy_forms'
     # DJANGO APPS
     'django.contrib.admin',
     'django.contrib.auth',
@@ -112,7 +114,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/3.1/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'es-us'
 
 TIME_ZONE = 'America/Costa_Rica'
 
@@ -130,6 +132,9 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),
 ]
+
+#CRISPY FORMS CSS PACK
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 # MEDIA SETTINGS
 # For profile and bands pictures
