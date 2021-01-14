@@ -40,7 +40,7 @@ INSTALLED_APPS = [
     'profiles.apps.ProfilesConfig',
     'reservations.apps.ReservationsConfig',
     # 3RD PARTY APPS
-    'crispy_forms'
+    'widget_tweaks',
     # DJANGO APPS
     'django.contrib.admin',
     'django.contrib.auth',
@@ -132,9 +132,6 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),
 ]
-
-#CRISPY FORMS CSS PACK
-CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 # MEDIA SETTINGS
 # For profile and bands pictures
