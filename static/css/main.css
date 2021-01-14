@@ -22,6 +22,15 @@
     background: rgb(24, 15, 48);
 }
 
+.messages-container {
+    display: flex;
+    width: 100%;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    height:50px;
+}
+
 nav {
     width:80%;
     margin: auto;
@@ -296,6 +305,80 @@ hr {
     border-top: 1px solid rgba(255, 255, 255, 0.3);
     border-left: 1px solid rgba(255, 255, 255, 0.3);
     flex-wrap: wrap;
+}
+
+/*
+------------> FORM STYLES <------------
+*/
+
+.form-hr {
+    margin: 20px 0;
+    border: 1px solid rgba(21, 126, 21, 0.719);
+}
+
+.form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-container .form-card {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 420px;
+    width: 290px;
+    font-family: 'Poppins', sans-serif;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    box-shadow: 3px 5px 10px rgba(0, 0, 0, 0.5);
+}
+
+.form-container .form-card h1 {
+    font-weight: 400;
+    font-size: 54px;
+    color: #fff;
+}
+
+.form-container .form-card .form-txt_field {
+    margin: 10px 0;
+}
+
+.form-container .form-card input[type=text], input[type=password] {
+    height: 30px;
+    width: 100%;
+    border: 0;
+    outline: none;
+    padding: 5px;
+    border-radius: 3px;
+}
+
+.form-container .form-card small {
+    color: #fff;
+    font-weight:200;
+}
+
+.form-container .form-card small a {
+    text-decoration: none;
+    color: rgb(57, 207, 112);
+}
+
+.form-container .form-card .form-submit {
+    display: flex;
+    width: 100%;
+    padding: 10px 0;
+    margin: 10px 0;
+    background-color:rgba(79, 194, 148, 0.981);
+    outline: none;
+    border: 1px solid;
+    border-color: rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+    justify-content:center;
+    color: #161622;
+    font-weight: 700;
+    cursor: pointer;
 }
 
 /*
