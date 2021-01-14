@@ -365,6 +365,10 @@ hr {
     color: rgb(57, 207, 112);
 }
 
+.form-container .form-card input[type=file] {
+    font-size: 10px;
+}
+
 .form-container .form-card .form-submit {
     display: flex;
     width: 100%;
