@@ -31,6 +31,15 @@ def profile(request):
     }
     return render(request, 'profiles/profile.html', context)
 
+def band_list(request):
+    user = User.objects.get(id=request.user.id)
+    bands = Band.objects.filter(owner=user)
+
+    context = {
+        'bands': bands,
+    }
+    return render(request, 'profiles/bands.html', context)
+    
 
 def band_creation(request):
 

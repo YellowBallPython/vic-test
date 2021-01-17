@@ -593,6 +593,47 @@ hr {
 }
 
 /*
+------------> BAND PAGE <------------
+*/
+
+.container .band-card {
+    display:flex;
+    overflow: hidden;
+    position: relative;
+    width: 280px;
+    height: 300px;
+    margin: 30px;
+    justify-content: center;
+    align-items: center;
+    background: var(--secondaryColor);
+    background-size: 275%;
+    background-position: center;
+    border-radius: 10px;
+    box-shadow: 3px 5px 40px rgba(0, 0, 0, 0.4);
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
+    border-left: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.container .band-card .band-content {
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.container .band-card .band-content .band-pic #band-pic-circle {
+    border-radius: 50%;
+}
+.container .band-card .band-content .band-footer-content {
+    display:flex;
+}
+
+.container .band-card .band-content .band-footer-content small{
+    margin: 0 5px;
+    color: black;
+}
+
+/*
 ------------> LOGOUT PAGE <------------
 */
 
