@@ -3,6 +3,7 @@ import datetime as dt
 from django.shortcuts import render, redirect
 from django.contrib import messages
 from django.contrib.auth.models import User
+from django.contrib.auth.decorators import login_required
 
 
 from .forms import MakeReservationForm
@@ -14,10 +15,13 @@ from .functions import (
     get_res_month,
 ) 
 
-
 def make_res(request):
     user = User.objects.get(id=request.user.id)
-    form = MakeReservationForm(instance=user)
+    form = MakeReservationForm(instance=user, initial={
+                                                        'date':dt.date.today(), 
+                                                        'check_in':dt.time(hour=9,minute=0),
+                                                        'check_out':dt.time(hour=10,minute=0)
+    })
 
     if request.method == "POST":
         form = MakeReservationForm(request.POST, instance=user)
@@ -95,10 +99,14 @@ def res_by_date(request):
 def success(request):
     return render(request, 'reservations/success.html')
 
-
+@login_required()
 def my_res(request):
-    pass
-# TODO: Hacer my_res view
+    user = User.objects.get(id=request.user.id)
+    reservations = Reservation.objects.filter(owner=user)
+    context = {
+        'reservations':reservations,
+        }
+    return render(request, 'reservations/my_reservations.html', context)
 
 
 def expired_res(request):

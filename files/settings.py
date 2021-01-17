@@ -148,3 +148,4 @@ EMAIL_USE_TLS = True
 
 # LOGIN REDIRECT
 LOGIN_REDIRECT_URL = 'frontend:index'
+LOGIN_URL = 'frontend:login'

@@ -1,0 +1,18 @@
+{% extends 'frontend/base.html' %}
+
+{% load widget_tweaks %}
+
+{% block title %}
+{% endblock title %}
+
+{% block content %}
+<div class="body-body">
+
+    <form method="POST">
+        {% csrf_token %}
+        <h2>Seguro quieres borrar "{{band.name}}"</h2>
+        <input type="submit" value="SI">
+        <a href="{% url 'profiles:band-list' %}">NO</a>
+    </form>
+</div>
+{% endblock content %}

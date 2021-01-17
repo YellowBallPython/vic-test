@@ -31,3 +31,6 @@ class Reservation(models.Model):
 
     def by_date(self, date=None):
         return Reservation.objects.filter(date=date)
+    
+    class Meta:
+        ordering = ['date']

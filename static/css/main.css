@@ -31,12 +31,6 @@
 }
 
 /*
-------------> HEADER <------------
-*/
-
-
-
-/*
 ------------> NAV <------------
 */
 
@@ -48,72 +42,6 @@
     align-items: center;
     height:50px;
     background: rgb(24, 15, 48);
-}
-
-/*
--------------------> MESSAGES <-----------------
-*/
-
-.messages-container {
-    position: absolute;
-    top: 50px;
-    display: flex;
-    position: relative;
-    justify-content: center;
-    align-items: center;
-    height:50px;
-}
-
-/*
-------------> ERROR MESSAGE <------------
-*/
-
-.messages-container .message-alert-error {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    height: 100%;
-    background-color: #fd195e;
-}
-
-/*
-------------> SUCCESS MESSAGE <------------
-*/
-
-.messages-container .message-alert-success {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    height: 100%;
-    background-color: #4fc294;
-}
-
-/*
-------------> WARNING MESSAGE <------------
-*/
-
-.messages-container .message-alert-warning {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    height: 100%;
-    background-color: #e6cf52;
-}
-
-/*
-------------> WARNING MESSAGE <------------
-*/
-
-.messages-container .message-alert-info {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    height: 100%;
-    background-color: #5281e6;
 }
 
 nav {
@@ -148,6 +76,73 @@ a {
     letter-spacing: 3;
     font-size: 12px;
 }
+
+/*
+------------> MESSAGES <----------
+*/
+
+.messages-container {
+    position: absolute;
+    top: 50px;
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    height:50px;
+}
+
+/*
+------------> ERROR <------------
+*/
+
+.messages-container .message-alert-error {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    background-color: #fd195e;
+}
+
+/*
+------------> SUCCESS <------------
+*/
+
+.messages-container .message-alert-success {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    background-color: #4fc294;
+}
+
+/*
+------------> WARNING <------------
+*/
+
+.messages-container .message-alert-warning {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    background-color: #e6cf52;
+}
+
+/*
+------------> INFO <------------
+*/
+
+.messages-container .message-alert-info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    background-color: #5281e6;
+}
+
 
 /*
 ------------> BODY-BODY <------------
@@ -363,6 +358,9 @@ hr {
 /*
 ------------> RESERVAS CARD <------------
 */
+
+
+
 .container-all-res {
     position: relative;
     display:flex;
@@ -392,6 +390,29 @@ hr {
     flex-wrap: wrap;
 }
 
+.container-all-res .static-card-all-res {
+    display:flex;
+    overflow: hidden;
+    position: relative;
+    width: 280px;
+    height: 200px;
+    margin: 30px;
+    padding: 10px;
+    justify-content: center;
+    align-items: center;
+    background:#c24f4f ;
+    background-size: 275%;
+    background-position: center;
+    border-radius: 10px;
+    box-shadow: 3px 5px 40px rgba(0, 0, 0, 0.4);
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
+    border-left: 1px solid rgba(255, 255, 255, 0.3);
+    flex-wrap: wrap;
+}
+
+.container-all-res .static-card-all-res .content-res a {
+    font-size: 16px;
+}
 /*
 ------------> FORM STYLES <------------
 */
@@ -424,6 +445,10 @@ hr {
 .form-container .form-card h1 {
     font-weight: 400;
     font-size: 54px;
+    color: #fff;
+}
+
+.form-container .form-card h2 {
     color: #fff;
 }
 
@@ -584,9 +609,21 @@ hr {
     font-size: 90px;
     color: rgba(79,194,148, 0.7)
 }
-.left-column .reservations-info .reservas-hechas {
 
+
+.profile-band-container .profile-band-card{
+    width: 100%;
+    display: flex;
+    height: 110px;
+    margin: 10px 0;
 }
+
+.profile-band-card .profile-pic #profile-pic-circle {
+    border-radius: 50%;
+    width: 70px;
+    margin: 0 15px;
+}
+
 .bands-info {
     grid-area: bands-info;
     color: white;
@@ -630,7 +667,6 @@ hr {
 
 .container .band-card .band-content .band-footer-content small{
     margin: 0 5px;
-    color: black;
 }
 
 /*

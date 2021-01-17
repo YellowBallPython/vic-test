@@ -14,3 +14,4 @@ class CreateBandForm(forms.ModelForm):
     class Meta:
         model = Band
         fields = ['name', 'genre', 'img']
+        required = []

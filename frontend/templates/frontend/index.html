@@ -5,6 +5,64 @@
 {% endblock title %}
 
 {% block content %}
+{% if user.is_authenticated %}
+<div class="body-body">
+    <div class="container">
+        <div class="card">
+            <div class="content">
+                <div class="content-top">
+                    <h2>MEMBER</h2>
+                    <h2>PROFILE</h2>
+                </div>
+                <div class="divider"></div>
+                <div class="content-bot">
+                    <h3>Personal Profle</h3>
+                    <p>Toma el control de tu espacio personal y accede a tu perfil.
+                    </p>
+                    <hr>
+                    <p>Puedes revisar tus reservas y bandas</p>
+                    <a href="{% url 'profiles:profile' %}">Entrar</a>
+                    <div class="divider"></div>
+                </div>
+            </div>
+        </div>
+        <div class="card-bands">
+            <div class="content">
+                <div class="content-top">
+                    <h2>BAND</h2>
+                    <h2>MANAGER</h2>
+                </div>
+                <div class="divider"></div>
+                <div class="content-bot">
+                    <h3>Band manager</h3>
+                    <p>Crea tu banda, añade los integrantes y su rol. Lleva el control del tiempo que has ensayado
+                        con cada una.</p>
+                    <hr>
+                    <p>Entra y lleva el control de tus bandas dentro del perfil.</p>
+                    <a href="{% url 'profiles:band-list' %}">Entrar</a>
+                    <div class="divider"></div>
+                </div>
+            </div>
+        </div>
+        <div class="card-reservations">
+            <div class="content">
+                <div class="content-top">
+                    <h2>RERSERVATION</h2>
+                </div>
+                <div class="divider"></div>
+                <div class="content-bot">
+                    <h3>Reservations</h3>
+                    <p>Ten el control de qué día y a qué hora vas a ensayar. </p>
+                    <hr>
+                    <p>Nuestro sistema te deja hacer track de las horas ensayadas con cualquiera de tus bandas</p>
+                    <a href="{% url 'reservations:lista' %}">Entrar</a>
+                    <div class="divider"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% else %}
 <div class="body-body">
     <div class="container">
         <div class="card">
@@ -39,7 +97,7 @@
                         cada una.</p>
                     <hr>
                     <p>Entra y lleva el control de tus bandas dentro del perfil.</p>
-                    <a href="#">Entrar</a>
+                    <a href="{% url 'profiles:band-creation' %}">Entrar</a>
                     <div class="divider"></div>
                 </div>
             </div>
@@ -55,11 +113,12 @@
                     <p>Ten el control de qué día y a qué hora vas a ensayar. </p>
                     <hr>
                     <p>Nuestro sistema te deja hacer track de las horas ensayadas con cualquiera de tus bandas</p>
-                    <a href="#">Entrar</a>
+                    <a href="{% url 'reservations:lista' %}">Entrar</a>
                     <div class="divider"></div>
                 </div>
             </div>
         </div>
     </div>
 </div>
+{% endif %}
 {% endblock content %}

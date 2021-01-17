@@ -9,5 +9,6 @@ urlpatterns = [
     path('bands', views.band_list, name='band-list'),
     path('band-creation/', views.band_creation, name='band-creation'),
     path('edit-band/<str:id>/', views.edit_band, name='edit-band'),
+    path('delete-band/<str:id>/', views.delete_band, name='delete-band'),
 ]
     
