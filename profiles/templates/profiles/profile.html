@@ -5,27 +5,72 @@
 {% endblock title %}
 
 {% block content %}
-<div class="main-card">
-    <div class="persona-info">
-        <img class="profile-picture" src="{{user.profile.pic.url}}" alt="profile-picture">
-        <h4>User: {{user.username}}</h4>
+<div class="body-body">
+
+    <div class="main-container">
+        <div class="greeting-wrapper">
+            <h3>Profile</h3>
+        </div>
+        <div class="card-container">
+            <div class="card-wrapper">
+                <div class="left-column">
+                    <div class="profile-pic">
+                        <img id="profile-pic-circle" src="{{user.profile.pic.url}}" alt="Foto de perfil">
+                    </div>
+                    <div class="personal-info">
+                        <h4>{{user.username.capitalize}}</h4>
+                        <h6>{{user.profile.rol.capitalize}}</h6>
+                    </div>
+                    <div class="profile-links">
+                        <div class="a-profile">
+                            <a href="{% url 'reservations:make' %}">Make reservation</a>
+                        </div>
+                        <div class="a-profile">
+                            <a href="{% url 'reservations:my-res' %}">My Reservations</a>
+
+                        </div>
+                        <div class="a-profile">
+                            <a href="{% url 'profiles:band-list' %}">My Bands</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="right-column">
+                    <div class="reservations-info">
+                        <div class="reservas-hechas">
+                            <h4>TOTAL DE RESERVAS</h4>
+                            <h1 class="profile-big-num">{{user_reservation_count}}</h1>
+                        </div>
+                        <div class="reservas-hechas">
+                            <h4>HORAS ENSAYADAS</h4>
+                            <h1 class="profile-big-num">0</h1>
+                        </div>
+                    </div>
+                    <div class="bands-info">
+                        <div class="profile-bands">
+                            <h4>BANDA FAVORITA</h4>
+                            {% if banda_favorita %}
+                            <div class="profile-band-container">
+                                <div class="profile-band-card">
+                                    {% for band in banda_favorita %}
+                                    <div class="profile-pic">
+                                        <img id="profile-pic-circle" src="{{band.img.url}}" alt="Foto de perfil">
+                                    </div>
+                                    <div class="profile-band-info">
+                                        <p>Name: {{band.name.title}}</p>
+                                        <p>Genre: {{band.genre.title}}</p>
+                                    </div>
+                                    {% endfor %}
+                                    {% else %}
+                                    <h5>No tienes bandas.</h5>
+                                </div>
+                            </div>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-    <div class="profile-band-section">
-
-        {% if bands %}
-        {% for band in bands %}
-        <img class="band-picture" src="{{band.img.url}}" alt="band-picture">
-        <p>{{band.name}}</p>
-        <small><a href="{% url 'profiles:edit-band' band.id %}">Editar</a></small>
-        <br>
-        {% endfor %}
-        {% else %}
-        <p>No tienes bandas.</p>
-        {% endif %}
-        <br>
-        <small><a href="{% url 'profiles:band-creation' %}">Agregar banda ☺</a></small>
-    </div>
-</div>
 
 
-{% endblock content %}
+    {% endblock content %}

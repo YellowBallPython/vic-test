@@ -1,0 +1,714 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap');
+:root{
+	--mainColor: rgb(56, 53, 73);
+    --secondaryColor:#4fc294;
+    
+	--borderColor:#c1c1c1;
+
+    --mainText1: #f5f5f5;
+    --mainText2: #eeeeee;
+    --secondaryText1: rgb(56, 53, 73);
+    --secondaryText2: #f5f5f5;
+    --mainLinkColor: #4fc294;
+    --secondayLinkColor:rgb(243, 168, 99);
+
+	--themeDotBorder:#24292e;
+
+	--previewBg:rgb(251, 249, 243, 0.8);
+	--previewShadow:#f0ead6;
+
+
+	--buttonColor:black;
+
+    --siteFont: 'Poppins', sans-serif;
+}
+* {
+    font-family: 'Poppins', sans-serif;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/*
+------------> NAV <------------
+*/
+
+.nav-container {
+    display: flex;
+    position: absolute;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    height:50px;
+    background: rgb(24, 15, 48);
+}
+
+nav {
+    width:80%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center
+}
+
+ul {
+    display: flex;
+    justify-content: space-between;
+    flex: 1;
+    list-style: none;
+}
+
+#logo {
+    font-family: 'Poppins';
+    font-weight:600;
+    color:  rgb(255, 251, 249);
+    flex: 5;
+}
+
+li {
+    font-size: 16px;
+    margin-left: 30px;
+}
+a {
+    color: rgb(255, 251, 249);
+    text-decoration: none;
+    letter-spacing: 3;
+    font-size: 12px;
+}
+
+/*
+------------> MESSAGES <----------
+*/
+
+.messages-container {
+    position: absolute;
+    top: 50px;
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    height:50px;
+}
+
+/*
+------------> ERROR <------------
+*/
+
+.messages-container .message-alert-error {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    background-color: #fd195e;
+}
+
+/*
+------------> SUCCESS <------------
+*/
+
+.messages-container .message-alert-success {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    background-color: #4fc294;
+}
+
+/*
+------------> WARNING <------------
+*/
+
+.messages-container .message-alert-warning {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    background-color: #e6cf52;
+}
+
+/*
+------------> INFO <------------
+*/
+
+.messages-container .message-alert-info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    background-color: #5281e6;
+}
+
+
+/*
+------------> BODY-BODY <------------
+*/
+
+.body-body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: rgb(56, 53, 73);
+}
+
+.container {
+    position: relative;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 1200px;
+    flex-wrap: wrap;
+}
+
+/*
+------------> PRIMERA CARTA MEMBERS <------------
+*/
+
+.container .card {
+    display:flex;
+    overflow: hidden;
+    position: relative;
+    width: 280px;
+    height: 400px;
+    margin: 30px;
+    justify-content: center;
+    align-items: center;
+    background: url(/static/images/members.jpg);
+    background-size: 275%;
+    background-position: center;
+    border-radius: 10px;
+    box-shadow: 3px 5px 40px rgba(0, 0, 0, 0.4);
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
+    border-left: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.container .card .content {
+    padding: 20px;
+    text-align: center;
+    transform: translateY(450px);
+    opacity: 1;
+    transition: 0.5s;
+}
+
+.container .card:hover .content {
+    transform: translateY(10px);
+    background: #fff;
+    opacity: 1;
+}
+
+.container .card .content .content-top {
+    color:rgba(225, 255, 255, 0.9)
+}
+
+.container .card .content .content-bot h3 {
+    color:rgb(56, 53, 73);
+    position: absolute;
+    top: 345px;
+    left: 75px;
+}
+
+.container .card .content .content-bot a {
+    font-weight: 600;
+    position: relative;
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background: #4fc294;
+    color: black;
+    box-shadow: 1px 3px 8px rgba(0, 0, 0, 0.5);
+    text-decoration: none;
+}
+
+/*
+------------> DIVIDER Y HR <------------
+*/
+
+.divider {
+    height: 20px;
+    margin-bottom: 300px;
+}
+
+hr {
+    margin: 20px 0;
+}
+
+/*
+------------> SEGUNDA CARTA BANDAS <------------
+*/
+
+.container .card-bands {
+    display:flex;
+    overflow: hidden;
+    position: relative;
+    width: 280px;
+    height: 400px;
+    margin: 30px;
+    justify-content: center;
+    align-items: center;
+    background: url(/static/images/bands.png);
+    background-size: 275%;
+    background-position: center;
+    border-radius: 10px;
+    box-shadow: 3px 5px 40px rgba(0, 0, 0, 0.4);
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
+    border-left: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.container .card-bands .content {
+    padding: 20px;
+    text-align: center;
+    transform: translateY(450px);
+    opacity: 1;
+    transition: 0.5s;
+}
+
+.container .card-bands:hover .content {
+    transform: translateY(10px);
+    background: #fff;
+    opacity: 1;
+}
+
+.container .card-bands .content .content-top {
+    color:rgba(225, 255, 255, 0.9)
+}
+
+.container .card-bands .content .content-bot h3 {
+    color:rgb(56, 53, 73);
+    position: absolute;
+    top: 345px;
+    left: 65px;
+}
+
+.container .card-bands .content .content-bot a {
+    font-weight: 600;
+    position: relative;
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background: #4fc294;
+    color: black;
+    box-shadow: 1px 3px 8px rgba(0, 0, 0, 0.5);
+    text-decoration: none;
+}
+
+/*
+------------> TERCERA CARTA RESERVATIONS <------------
+*/
+
+.container .card-reservations {
+    display:flex;
+    overflow: hidden;
+    position: relative;
+    width: 280px;
+    height: 400px;
+    margin: 30px;
+    justify-content: center;
+    align-items: center;
+    background: url(/static/images/reservaciones.jpg);
+    background-size: 275%;
+    background-position: center;
+    border-radius: 10px;
+    box-shadow: 3px 5px 40px rgba(0, 0, 0, 0.4);
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
+    border-left: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.container .card-reservations .content {
+    padding: 20px;
+    text-align: center;
+    transform: translateY(450px);
+    opacity: 1;
+    transition: 0.5s;
+}
+
+.container .card-reservations:hover .content {
+    transform: translateY(10px);
+    background: #fff;
+    opacity: 1;
+}
+
+.container .card-reservations .content .content-top {
+    color:rgba(225, 255, 255, 0.9)
+}
+
+.container .card-reservations .content .content-bot h3 {
+    color:rgb(56, 53, 73);
+    position: absolute;
+    top: 325px;
+    left: 75px;
+}
+
+.container .card-reservations .content .content-bot a {
+    font-weight: 600;
+    position: relative;
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background: #4fc294;
+    color: black;
+    box-shadow: 1px 3px 8px rgba(0, 0, 0, 0.5);
+    text-decoration: none;
+}
+
+/*
+------------> RESERVAS CARD <------------
+*/
+
+
+
+.container-all-res {
+    position: relative;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 1200px;
+    flex-wrap: wrap;
+    margin-top: 50px;
+}
+
+.container-all-res .card-all-res {
+    display:flex;
+    overflow: hidden;
+    position: relative;
+    width: 280px;
+    height: 200px;
+    margin: 30px;
+    justify-content: center;
+    align-items: center;
+    background:#4fc294 ;
+    background-size: 275%;
+    background-position: center;
+    border-radius: 10px;
+    box-shadow: 3px 5px 40px rgba(0, 0, 0, 0.4);
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
+    border-left: 1px solid rgba(255, 255, 255, 0.3);
+    flex-wrap: wrap;
+}
+
+.container-all-res .static-card-all-res {
+    display:flex;
+    overflow: hidden;
+    position: relative;
+    width: 280px;
+    height: 200px;
+    margin: 30px;
+    padding: 10px;
+    justify-content: center;
+    align-items: center;
+    background:#c24f4f ;
+    background-size: 275%;
+    background-position: center;
+    border-radius: 10px;
+    box-shadow: 3px 5px 40px rgba(0, 0, 0, 0.4);
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
+    border-left: 1px solid rgba(255, 255, 255, 0.3);
+    flex-wrap: wrap;
+}
+
+.container-all-res .static-card-all-res .content-res a {
+    font-size: 16px;
+}
+/*
+------------> FORM STYLES <------------
+*/
+
+.form-hr {
+    margin: 20px 0;
+    border: 1px solid rgba(21, 126, 21, 0.719);
+}
+
+.form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-container .form-card {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 420px;
+    width: 290px;
+    font-family: 'Poppins', sans-serif;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    box-shadow: 3px 5px 10px rgba(0, 0, 0, 0.5);
+}
+
+.form-container .form-card h1 {
+    font-weight: 400;
+    font-size: 54px;
+    color: #fff;
+}
+
+.form-container .form-card h2 {
+    color: #fff;
+}
+
+.form-container .form-card .form-txt_field {
+    margin: 10px 0;
+}
+
+.form-container .form-card input[type=text], input[type=password] {
+    height: 30px;
+    width: 100%;
+    border: 0;
+    outline: none;
+    padding: 5px;
+    border-radius: 3px;
+}
+
+.form-container .form-card small {
+    color: #fff;
+    font-weight:200;
+}
+
+.form-container .form-card small a {
+    text-decoration: none;
+    color: rgb(57, 207, 112);
+}
+
+.form-container .form-card input[type=file] {
+    font-size: 10px;
+}
+
+.form-container .form-card .form-submit {
+    display: flex;
+    width: 100%;
+    padding: 10px 0;
+    margin: 10px 0;
+    background-color:rgba(79, 194, 148, 0.981);
+    outline: none;
+    border: 1px solid;
+    border-color: rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+    justify-content:center;
+    color: #161622;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+/*
+------------> PROFILE PAGE <-----------
+*/
+
+.greeting-wrapper {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+}
+
+
+/*
+.card-container centra la carta.
+*/
+.card-container {
+    display: flex;
+    justify-content: center
+}
+
+.card-wrapper {
+
+    width: 800px;
+    margin-top: 30px;
+    
+    -webkit-box-shadow: 5px 5px 20px 3px rgba(0,0,0,0.52); 
+    box-shadow: 5px 5px 20px 3px rgba(0,0,0,0.52);
+    border-radius: 20px;
+
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    grid-template-rows: 25em;
+    grid-template-areas: 
+        'left-column right-column'
+    ;
+}
+
+.left-column {
+    grid-area: left-column;
+    display: grid;
+}
+
+.left-column .profile-pic {
+    display:flex;
+    min-height: 160px;
+    border-radius: 20px 0 0 0 ;
+    justify-content: center;
+    align-items: center;
+}
+
+.left-column .profile-pic #profile-pic-circle {
+    min-width: 120px;
+    min-width: 120px;
+    border-radius: 50%;
+}
+
+.left-column .personal-info {
+    display: block;
+    align-self: center;
+    text-align: center;
+    color: var(--secondaryColor)
+}
+
+.left-column .profile-links{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+
+.left-column .profile-links .a-profile {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 75%;
+    height: 34px;
+    margin: 0 0 10px 0;
+
+    background: rgba(225, 225, 225, 0.3);
+    border-radius: 50px;
+    transition: 0.3s;
+    -webkit-box-shadow: 5px 5px 20px 3px rgba(0,0,0,0.52); 
+    box-shadow: 5px 5px 20px 3px rgba(0,0,0,0.52);
+
+}
+
+.left-column .profile-links .a-profile:hover {
+    background: rgba(228, 223, 223, 0.5);
+}
+
+.right-column {
+    grid-area: right-column;
+    
+    padding: 2em;
+    display: grid;
+    grid-template-rows: 100%;
+    grid-template-areas: 
+        'reservations-info bands-info'
+    ;
+}
+
+.right-column .reservations-info {
+    grid-area: reservations-info;
+    display: flexbox;
+    color: white;
+
+}
+
+.right-column .profile-big-num {
+    font-size: 90px;
+    color: rgba(79,194,148, 0.7)
+}
+
+
+.profile-band-container .profile-band-card{
+    width: 100%;
+    display: flex;
+    height: 110px;
+    margin: 10px 0;
+}
+
+.profile-band-card .profile-pic #profile-pic-circle {
+    border-radius: 50%;
+    width: 70px;
+    margin: 0 15px;
+}
+
+.bands-info {
+    grid-area: bands-info;
+    color: white;
+}
+
+/*
+------------> BAND PAGE <------------
+*/
+
+.container .band-card {
+    display:flex;
+    overflow: hidden;
+    position: relative;
+    width: 280px;
+    height: 300px;
+    margin: 30px;
+    justify-content: center;
+    align-items: center;
+    background: var(--secondaryColor);
+    background-size: 275%;
+    background-position: center;
+    border-radius: 10px;
+    box-shadow: 3px 5px 40px rgba(0, 0, 0, 0.4);
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
+    border-left: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.container .band-card .band-content {
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.container .band-card .band-content .band-pic #band-pic-circle {
+    border-radius: 50%;
+}
+.container .band-card .band-content .band-footer-content {
+    display:flex;
+}
+
+.container .band-card .band-content .band-footer-content small{
+    margin: 0 5px;
+}
+
+/*
+------------> LOGOUT PAGE <------------
+*/
+
+.logout-frame .login-question a {
+    font-weight: 200;
+}
+
+
+/*
+------------> MEDIA QUERIES <------------
+*/
+
+@media only screen and (max-width: 600px) {
+    .nav-container {
+        position:relative;
+    }
+
+    .messages-container{
+        position:relative;
+        top: 0;
+    }
+
+    .container-all-res {
+        margin-top: 15px;
+    }
+  }
+
+  @media only screen and (max-width: 1024px) {
+    .nav-container {
+        position:relative;
+    }
+
+    .messages-container{
+        position:relative;
+        top: 0;
+    }
+
+    .container-all-res {
+        margin-top: 15px;
+    }
+
+  }

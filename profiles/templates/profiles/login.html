@@ -1,15 +1,43 @@
 {% extends 'frontend/base.html' %}
-
+{% load widget_tweaks %}
 {% block title %}
 <title>Login</title>
 {% endblock title %}
 
 {% block content %}
-<form method='POST'>
-    {% csrf_token %}
-    <fieldset>
-        {{form}}
-    </fieldset>
-    <input formmethod="POST" type="submit" value="Entrar">
-</form>
+{% if user.is_authenticated %}
+<div class="body-body">
+    <h1 style="color:white;">YA COMPLETASTE EL REGISTRO :)</h1>
+</div>
+{% else %}
+
+<div class="body-body">
+    <div class="form-container">
+        <div class="form-card">
+            <div class="form-card-content">
+                <h1>Login</h1>
+                <hr>
+                <form method="post">
+                    {% csrf_token %}
+                    <div class="form-txt_field">
+                        {% render_field form.username type="text" placeholder="Username"%}
+                    </div>
+                    <div class="form-txt_field">
+                        {% render_field form.password type="password" placeholder="Password"%}
+                    </div>
+                    <div class="form-forgot-pass">
+                        <small> Olvidaste tu pass? <a href="#">Recuperar</a></small>
+                    </div>
+                    <input class="form-submit" type="submit" value="Entrar">
+                    <div class="form-footer">
+                        <small>No tienes cuenta? Créala <a href="{% url 'frontend:register' %}">aquí</a> </small>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endif %}
+
+
 {% endblock content %}

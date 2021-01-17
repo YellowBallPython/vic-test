@@ -1,0 +1,36 @@
+{% extends 'frontend/base.html' %}
+
+{% block title %}
+{% endblock title %}
+
+
+{% block content %}
+<div class="body-body">
+    <div class="container">
+        {% if bands %}
+        {% for band in bands %}
+        <div class="band-card">
+            <div class="band-content">
+                <div class="band-pic">
+                    <img id="band-pic-circle" src="{{band.img.url}}" alt="Foto de perfil">
+                </div>
+                <div class="band-body-content">
+                    <h2>{{band.name.title}}</h2>
+                </div>
+                <div class="band-footer-content">
+                    <small><a href="{% url 'profiles:edit-band' band.id %}">Editar banda</a></small>
+                    <p>~</p>
+                    <small><a href="{% url 'profiles:delete-band' band.id %}">Borrar</a></small>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+        {% else %}
+        <h1>No tienes bandas, agrega una <a href="{% url 'profiles:band-creation' %}">aquí</a></h1>
+        {% endif %}
+    </div>
+
+
+
+</div>
+{% endblock content %}

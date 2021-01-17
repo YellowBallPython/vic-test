@@ -39,6 +39,8 @@ INSTALLED_APPS = [
     'bands.apps.BandsConfig',
     'profiles.apps.ProfilesConfig',
     'reservations.apps.ReservationsConfig',
+    # 3RD PARTY APPS
+    'widget_tweaks',
     # DJANGO APPS
     'django.contrib.admin',
     'django.contrib.auth',
@@ -112,7 +114,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/3.1/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'es-us'
 
 TIME_ZONE = 'America/Costa_Rica'
 
@@ -146,3 +148,4 @@ EMAIL_USE_TLS = True
 
 # LOGIN REDIRECT
 LOGIN_REDIRECT_URL = 'frontend:index'
+LOGIN_URL = 'frontend:login'

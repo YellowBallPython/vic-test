@@ -1,12 +1,32 @@
 {% extends 'frontend/base.html' %}
-
+{% load widget_tweaks %}
 {% block title %}
 {% endblock title %}
 
 {% block content %}
-<form action="{% url 'reservations:make' %}" method="POST">
-    {% csrf_token %}
-    {{form.as_p}}
-    <input type="submit" value="Crear">
-</form>
+<div class="body-body">
+    <div class="form-container">
+        <div class="form-card">
+            <div class="form-card-content">
+                <h2>Make Reservation</h2>
+                <hr>
+                <form method="post">
+                    {% csrf_token %}
+                    <div class="form-txt_field">
+                        {% render_field form.date type="date" placeholder="Date"%}
+                    </div>
+                    <div class="form-txt_field">
+                        {% render_field form.check_in type="time" placeholder="Check in"%}
+                    </div>
+                    <div class="form-txt_field">
+                        {% render_field form.check_out type="time" placeholder="Check out"%}
+                    </div>
+                    <input class="form-submit" type="submit" value="Entrar">
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
 {% endblock content %}

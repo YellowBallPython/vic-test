@@ -5,21 +5,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" type="text/css" href="{% static '/css/main.css' %}">
     <link rel="shortcut icon" type="image/png" href="{% static 'images/salavictoriaicon.png' %}">
     {% block title %}
     {% endblock title %}
 </head>
 
 <body>
-    {% if messages %}
-    {% for message in messages %}
-    <div class="alert alert-{{message.tags}}">
-        {{message}}
-    </div>
-    {% endfor %}
-    {% endif %}
+    <header>
+        <div class="nav-container">
+            <nav>
+                <a id="logo" href="{% url 'frontend:index' %}">
+                    <h1>sala victoria</h1>
+                </a>
+                <ul>
+                    {% if user.is_authenticated %}
+                    <li><a href="{% url 'profiles:profile' %}">Perfil</a></li>
+                    <li><a href="{% url 'reservations:lista' %}">Reservas</a></li>
+                    <li><a href="{% url 'frontend:logout' %}">Logout</a></li>
+                    {% else %}
+                    <li><a href="{% url 'frontend:login' %}">Entrar</a></li>
+                    <li><a href="{% url 'frontend:register' %}">Registrarme</a></li>
+                    {% endif %}
+                </ul>
+            </nav>
+        </div>
+        {% if messages %}
+        <div class="messages-container">
+            {% for message in messages %}
+            <div class="message-alert-{{message.tags}}">
+                {{message}}
+            </div>
+            {% endfor %}
+        </div>
+        {% endif %}
+    </header>
+
     {% block content %}
     {% endblock content %}
+    <!-- Option 1: Bootstrap Bundle with Popper -->
 </body>
 
 </html>

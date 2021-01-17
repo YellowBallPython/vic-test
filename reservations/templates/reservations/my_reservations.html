@@ -9,9 +9,9 @@
     <div class="container-all-res">
         <div class="static-card-all-res">
             <div class="content-res">
-                <h3>Estas son las cartas de todas las reservas de la sala.</h3>
-                <p>Si quieres revisar tus reservas personales, haz click <a
-                        href="{% url 'reservations:my-res' %}">aquí.</a></p>
+                <h3>Estas son las cartas de tus reservas.</h3>
+                <p>Si quieres revisar las reservas de la sala, haz click <a
+                        href="{% url 'reservations:lista' %}">aquí.</a></p>
             </div>
         </div>
         {% for reservation in reservations %}
