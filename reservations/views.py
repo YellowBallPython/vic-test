@@ -34,7 +34,6 @@ def make_res(request):
                     request, "Ingrese una fecha válida.")
                 context = {
                     'form': form,
-                    'messages': messages,
                 }
                 return render(request, 'reservations/make.html', context)
 
@@ -44,7 +43,6 @@ def make_res(request):
                     request, "Ingrese una hora válida.")
                 context = {
                     'form': form,
-                    'messages': messages,
                 }
                 return render(request, 'reservations/make.html', context)
 
@@ -72,7 +70,6 @@ def make_res(request):
                         request, "Alguien ya tomó reservó ese espacio :(")
                     context = {
                         'form': form,
-                        'messages': messages,
                     }
                     return render(request, 'reservations/make.html', context)
 

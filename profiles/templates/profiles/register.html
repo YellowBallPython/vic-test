@@ -6,6 +6,11 @@
 
 {% block content %}
 <div class="body-body">
+    {% if user.is_authenticated %}
+
+    <h2 id="register-denied-h1">Para crear una cuenta es necesario desloguearse.</h2>
+
+    {% else %}
     <div class="form-container">
         <div class="form-card">
             <div class="form-card-content">
@@ -35,6 +40,7 @@
                 </form>
             </div>
         </div>
+        {% endif %}
     </div>
 </div>
 
