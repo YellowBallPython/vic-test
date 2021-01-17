@@ -6,6 +6,11 @@
 
 {% block content %}
 <div class="body-body">
-    <h1>Logout completado</h1>
+    <div class="logout-frame">
+        <h1>Logout completado</h1>
+        <div class="login-question">
+            <h4>Volver a <a href="{% url 'frontend:login' %}">ingresar</a></h4>
+        </div>
+    </div>
 </div>
 {% endblock content %}

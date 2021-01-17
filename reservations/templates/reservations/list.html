@@ -12,7 +12,7 @@
             <div class="content-res">
                 <h3>Reserva para el {{reservation.date|date:"d"}} de {{reservation.date|date:"M"}}</h3>
                 <p>de {{reservation.check_in}} a {{reservation.check_out}}</p>
-                <small>Reservado por {{reservation.owner}}</small>
+                <small>Reservado por {{reservation.owner.username.capitalize}}</small>
             </div>
         </div>
         {% endfor %}
